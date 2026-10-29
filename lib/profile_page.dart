@@ -66,23 +66,32 @@ class ProfileAvatar extends StatelessWidget {
           ),
           const SizedBox(height: 24),
 
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            decoration: BoxDecoration(
-              color: Colors.blue[50],
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const StatItem(count: "2", label: "Project"),
-                const SizedBox(width: 24),
-                const StatItem(count: "1.5K", label: "Followers"),
-                const SizedBox(width: 24),
-                StatItem(count: "10", label: "Following"),
-              ],
-            ),
-          ),
+          const ProfileStats(),
+        ],
+      ),
+    );
+  }
+}
+
+class ProfileStats extends StatelessWidget {
+  const ProfileStats({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      decoration: BoxDecoration(
+        color: Colors.blue[50],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const StatItem(count: "2", label: "Project"),
+          const SizedBox(width: 24),
+          const StatItem(count: "1.5K", label: "Followers"),
+          const SizedBox(width: 24),
+          StatItem(count: "10", label: "Following"),
         ],
       ),
     );
