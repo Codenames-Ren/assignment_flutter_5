@@ -1,9 +1,3 @@
-/*Day 1: 
-Pagi : Membuat main.dart dan profile_page.dart 
-dengan Scaffold, AppBar, CircleAvatar, dan Text.
-Siang : Memecah Column dengan membuat Custom Widget ProfileAvatar dan ProfileInfo.
- */
-
 import 'package:assignment_flutter_5/profile_page.dart';
 import 'package:flutter/material.dart';
 
