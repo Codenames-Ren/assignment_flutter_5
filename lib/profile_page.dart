@@ -13,38 +13,50 @@ class ProfileInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ProfileAvatar(userName: userName, role: role),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        children: [
+          ProfileAvatar(userName: userName, role: role),
 
-        const SizedBox(height: 6),
+          const SizedBox(height: 6),
 
-        Text(
-          userName,
-          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 8),
-        Text(
-          role,
-          style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-          textAlign: TextAlign.center,
-        ),
-
-        const SizedBox(height: 24),
-
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Project Experiences",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          Text(
+            userName,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
-        ),
 
-        const Divider(height: 12),
+          const SizedBox(height: 8),
 
-        Flexible(
-          child: ListView.builder(
+          Text(
+            role,
+            style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: 24),
+
+          const ProfileStats(),
+
+          const SizedBox(height: 24),
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Project Experiences",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+
+          const Divider(height: 12),
+
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: experiences.length,
             itemBuilder: (context, index) {
               return Card(
@@ -57,8 +69,8 @@ class ProfileInfo extends StatelessWidget {
               );
             },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -72,7 +84,7 @@ class ProfileAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(4.0),
       child: Column(
         children: [
           const CircleAvatar(
@@ -92,9 +104,6 @@ class ProfileAvatar extends StatelessWidget {
             icon: const Icon(Icons.edit),
             label: const Text("Edit Profile"),
           ),
-          const SizedBox(height: 24),
-
-          const ProfileStats(),
         ],
       ),
     );
