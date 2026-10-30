@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProfileInfo extends StatelessWidget {
-  ProfileInfo({super.key});
+  const ProfileInfo({super.key});
 
   final String userName = "Bayu Sukma";
   final String role = "Junior Backend Developer";
-
-  final List<String> experiences = [
-    "Backend Developer GRPL - Global Institute",
-    "Solo Project Assignment - ArcStream Project",
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,21 +49,7 @@ class ProfileInfo extends StatelessWidget {
 
           const Divider(height: 12),
 
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: experiences.length,
-            itemBuilder: (context, index) {
-              return Card(
-                elevation: 2,
-                margin: const EdgeInsets.symmetric(vertical: 2),
-                child: ListTile(
-                  leading: const Icon(Icons.work, color: Colors.blueAccent),
-                  title: Text(experiences[index]),
-                ),
-              );
-            },
-          ),
+          ExperienceCard(),
         ],
       ),
     );
@@ -156,6 +137,34 @@ class StatItem extends StatelessWidget {
         const SizedBox(height: 4),
         Text(label, style: TextStyle(fontSize: 14, color: Colors.grey)),
       ],
+    );
+  }
+}
+
+class ExperienceCard extends StatelessWidget {
+  ExperienceCard({super.key});
+
+  final List<String> experiences = [
+    "Backend Developer GRPL - Global Institute",
+    "Solo Project Assignment - ArcStream Project",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: experiences.length,
+      itemBuilder: (context, index) {
+        return Card(
+          elevation: 3,
+          margin: const EdgeInsets.symmetric(vertical: 2),
+          child: ListTile(
+            leading: const Icon(Icons.work, color: Colors.blueAccent),
+            title: Text(experiences[index]),
+          ),
+        );
+      },
     );
   }
 }
