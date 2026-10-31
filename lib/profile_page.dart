@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
 
-class ProfileInfo extends StatelessWidget {
-  const ProfileInfo({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   final String userName = "Bayu Sukma";
   final String role = "Junior Backend Developer";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("User Profile"),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+      ),
+      body: SingleChildScrollView(
+        child: ProfileInfo(userName: userName, role: role),
+      ),
+    );
+  }
+}
+
+class ProfileInfo extends StatelessWidget {
+  final String userName;
+  final String role;
+
+  const ProfileInfo({super.key, required this.userName, required this.role});
 
   @override
   Widget build(BuildContext context) {

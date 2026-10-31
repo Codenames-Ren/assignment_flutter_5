@@ -16,15 +16,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("User Profile"),
-          centerTitle: true,
-          backgroundColor: Colors.blueAccent,
-          foregroundColor: Colors.white,
-        ),
-        body: SingleChildScrollView(child: ProfileInfo()),
-      ),
+      home: ProfilePage(),
     );
   }
 }
