@@ -1,6 +1,6 @@
 # Profile Section - Assignment Flutter 5
 
-Nama : Bayu Sukma
+Nama : Bayu Sukma <br>
 NIM  : 1124160034
 
 ## Project Summary
